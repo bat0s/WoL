@@ -19,7 +19,7 @@ do { (fprintf (stderr, "\x1B[31m[ERROR] (%s: %d: %s) ", __FILE__, __LINE__, __fu
 
     static inline char* __attribute__ ((malloc)) malloc_s (size_t size)
     {
-        if (size <= 0)  error("size must be > 0");
+        if (size <= 0)  error ("size must be > 0");
     
         char* ptr = (char *) malloc (sizeof (char) * size);
     
@@ -181,7 +181,7 @@ static void send_wol (const char* bcast, unsigned long port, bool ipv6)
         addr.sin_port = htons (port);
     }
     
-    memset(packet, 0xFF, 6);
+    memset (packet, 0xFF, 6);
     
     unsigned char* mac_addr = ipv6 ? mac_from_ipv6 (&addr6.sin6_addr) : mac_from_ipv4 (&addr.sin_addr);
     
